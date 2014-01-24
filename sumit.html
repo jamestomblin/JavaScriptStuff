@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SUMIT</title>
+
+    <style>
+
+        a:hover {
+            cursor:pointer;
+        }
+
+    </style>
+</head>
+<body>
+<script type="text/template" id="my-video-list-template">
+
+    <div id="myVideos">
+        <ul>
+            <% for(var i = 0; i< data.length; i++){ %>
+            <li>
+            <%= data[0].title %>
+            </li>
+            <% } %>
+       </ul>
+    </div>
+
+</script>
+
+<script type="text/template" id="course-video-list-template">
+
+    <div id="courseVideos">
+        <ul>
+            <% for(var i = 0; i< data.length; i++){ %>
+            <a class="button" data-id="<%= data[i].id %>" data-index="<%=i%>"> <li>
+                <%= data[i].title %>
+            </li></a>
+            <% } %>
+        </ul>
+
+    </div>
+
+</script>
+
+<script type="text/template" id="detail-video-template">
+
+<h3> <%= data.title %></h3>
+
+
+</script>
+
+
+<div id="my-video-list"></div>
+
+<div id="course-video-list"> </div>
+
+<div id="detail-video"> </div>
+
+
+<script src="vendor/jq/jq2.js"></script>
+<script src="vendor/underscore/underscore.js"></script>
+<script src="vendor/backbone/backbone1.1.js"></script>
+
+
+<script src="projects/sumit/view/course-list-view.js"></script>
+<script src="projects/sumit/model/course-list-model.js"></script>
+
+<script src="projects/sumit/view/my-list-view.js"></script>
+<script src="projects/sumit/model/my-list-model.js"></script>
+
+<script src="projects/sumit/view/video-details-view.js"></script>
+
+<script src="projects/sumit/router/router.js"></script>
+
+</body>
+</html>
